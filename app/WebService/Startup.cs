@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using WebService.Services;
 
 namespace WebService
 {
@@ -29,6 +30,10 @@ namespace WebService
         {
             Program.Output("[Startup] ConfigureServices - Called");
             services.AddControllers();
+
+            services.AddTransient<IDISampleTransient, DISampleService>();
+            services.AddScoped<IDISampleScoped, DISampleService>();
+            services.AddSingleton<IDISampleSingleton, DISampleService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
