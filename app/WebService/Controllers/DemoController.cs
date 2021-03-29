@@ -10,6 +10,7 @@ namespace WebService.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Infrastructure.ApplicationModels.CustomControllerModelConvention("Custom Controller Description")]
     public class DemoController : ControllerBase
     {
         private readonly ILogger<DemoController> _logger;
@@ -28,9 +29,11 @@ namespace WebService.Controllers
             _singleton = singleton;
             _scoped = scoped;
             _transient = transient;
+            
         }
 
         [HttpGet]
+        [Infrastructure.ApplicationModels.CustomActionModelConvention("Custom Action Description")]
         public IEnumerable<DemoService> Get(
             [FromServices] IDISampleSingleton actionSingleton,
             [FromServices] IDISampleScoped actionScoped,
@@ -41,6 +44,9 @@ namespace WebService.Controllers
             IDISample retrieveScoped = HttpContext.RequestServices.GetService(typeof(IDISampleScoped)) as IDISample;
             IDISample retrieveTransient = HttpContext.RequestServices.GetService(typeof(IDISampleTransient)) as IDISample;
             // Show injection object
+            Program.Output("[ApplicationModels] Appliction : " + ControllerContext.ActionDescriptor.Properties["appDescription"]);
+            Program.Output("[ApplicationModels] Controller : " + ControllerContext.ActionDescriptor.Properties["controllerDescription"]);
+            Program.Output("[ApplicationModels] Action : " + ControllerContext.ActionDescriptor.Properties["actionDescription"]);
             Program.Output("[DemoController] Http Request : " + HttpContext.GetHashCode());
             Program.Output("[DemoController] Controller Singleton \t" + _singleton.Id + ", " + _singleton.GetHashCode());
             Program.Output("[DemoController] Controller Scoped \t" + _scoped.Id + ", " + _scoped.GetHashCode());

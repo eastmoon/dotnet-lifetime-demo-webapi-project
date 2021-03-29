@@ -8,40 +8,49 @@
 + [範例文獻參考](https://github.com/eastmoon/docker-dotnet-webapi/blob/master/doc/dotnet-mvc-application-lifecycle.md)
 
 ```
-[2021/03/29 15:38:33] [Program] Start
-[2021/03/29 15:38:33] [Program] Create HostBuilder
-[2021/03/29 15:38:33] [Program] Build Host
-[2021/03/29 15:38:33] [Program] hostBuilder.ConfigureServices - Called
-[2021/03/29 15:38:33] [Program] webBuilder.ConfigureServices - Called
-[2021/03/29 15:38:33] [Startup] Constructor - Called
-[2021/03/29 15:38:33] [Startup] ConfigureServices - Called
-[2021/03/29 15:38:33] [Program] Run Host
-[2021/03/29 15:38:34] [Startup] Configure - Called
-[2021/03/29 15:38:34] [Startup] ApplicationLifetime - Started
+[2021/03/29 19:03:02] [Program] Start
+[2021/03/29 19:03:02] [Program] Create HostBuilder
+[2021/03/29 19:03:02] [Program] Build Host
+[2021/03/29 19:03:03] [Program] hostBuilder.ConfigureServices - Called
+[2021/03/29 19:03:03] [Program] webBuilder.ConfigureServices - Called
+[2021/03/29 19:03:03] [Startup] Constructor - Called
+[2021/03/29 19:03:03] [Startup] ConfigureServices - Called
+[2021/03/29 19:03:03] [Program] Run Host
+[2021/03/29 19:03:03] [CustomAppModels] Constructor - Called
+[2021/03/29 19:03:03] [CustomAppModels] OnProvidersExecuting - Called
+[2021/03/29 19:03:03] [CustomAppModels] OnProvidersExecuted - Called
+[2021/03/29 19:03:03] [Startup] Configure - Called
+[2021/03/29 19:03:03] [Startup] ApplicationLifetime - Started
 ---
-[2021/03/29 15:38:34] [DemoController] Http Request : 5826912
-[2021/03/29 15:38:34] [DemoController] Controller Singleton 	1, 13896890
-[2021/03/29 15:38:34] [DemoController] Controller Scoped 	2, 21621962
-[2021/03/29 15:38:34] [DemoController] Controller Transient 	3, 55256301
-[2021/03/29 15:38:34] [DemoController] Action Singleton 	1, 13896890
-[2021/03/29 15:38:34] [DemoController] Action Scoped  		2, 21621962
-[2021/03/29 15:38:34] [DemoController] Action Transient 	4, 51408035
-[2021/03/29 15:38:34] [DemoController] HttpContext Singleton 	1, 13896890
-[2021/03/29 15:38:34] [DemoController] HttpContext Scoped  	2, 21621962
-[2021/03/29 15:38:34] [DemoController] HttpContext Transient 	5, 19531649
-[2021/03/29 15:38:35] [DemoController] Http Request : 9029417
-[2021/03/29 15:38:35] [DemoController] Controller Singleton 	1, 13896890
-[2021/03/29 15:38:35] [DemoController] Controller Scoped 	6, 62107587
-[2021/03/29 15:38:35] [DemoController] Controller Transient 	7, 55400036
-[2021/03/29 15:38:35] [DemoController] Action Singleton 	1, 13896890
-[2021/03/29 15:38:35] [DemoController] Action Scoped  		6, 62107587
-[2021/03/29 15:38:35] [DemoController] Action Transient 	8, 29190913
-[2021/03/29 15:38:35] [DemoController] HttpContext Singleton 	1, 13896890
-[2021/03/29 15:38:35] [DemoController] HttpContext Scoped  	6, 62107587
-[2021/03/29 15:38:35] [DemoController] HttpContext Transient 	9, 22550079
-[2021/03/29 15:38:39] [Startup] Trigger stop WebHost
-[2021/03/29 15:38:39] [Startup] ApplicationLifetime - Stopping
+[2021/03/29 19:03:04] [ApplicationModels] Appliction : Custom Application Description
+[2021/03/29 19:03:04] [ApplicationModels] Controller : Custom Controller Description
+[2021/03/29 19:03:04] [ApplicationModels] Action : Custom Action Description
+[2021/03/29 19:03:04] [DemoController] Http Request : 32747756
+[2021/03/29 19:03:04] [DemoController] Controller Singleton 	1, 16145044
+[2021/03/29 19:03:04] [DemoController] Controller Scoped 	2, 23749772
+[2021/03/29 19:03:04] [DemoController] Controller Transient 	3, 3707448
+[2021/03/29 19:03:04] [DemoController] Action Singleton 	1, 16145044
+[2021/03/29 19:03:04] [DemoController] Action Scoped  		2, 23749772
+[2021/03/29 19:03:04] [DemoController] Action Transient 	4, 6326333
+[2021/03/29 19:03:04] [DemoController] HttpContext Singleton 	1, 16145044
+[2021/03/29 19:03:04] [DemoController] HttpContext Scoped  	2, 23749772
+[2021/03/29 19:03:04] [DemoController] HttpContext Transient 	5, 2957860
+[2021/03/29 19:03:05] [ApplicationModels] Appliction : Custom Application Description
+[2021/03/29 19:03:05] [ApplicationModels] Controller : Custom Controller Description
+[2021/03/29 19:03:05] [ApplicationModels] Action : Custom Action Description
+[2021/03/29 19:03:05] [DemoController] Http Request : 38414640
+[2021/03/29 19:03:05] [DemoController] Controller Singleton 	1, 16145044
+[2021/03/29 19:03:05] [DemoController] Controller Scoped 	6, 6630602
+[2021/03/29 19:03:05] [DemoController] Controller Transient 	7, 1401080
+[2021/03/29 19:03:05] [DemoController] Action Singleton 	1, 16145044
+[2021/03/29 19:03:05] [DemoController] Action Scoped  		6, 6630602
+[2021/03/29 19:03:05] [DemoController] Action Transient 	8, 5024928
+[2021/03/29 19:03:05] [DemoController] HttpContext Singleton 	1, 16145044
+[2021/03/29 19:03:05] [DemoController] HttpContext Scoped  	6, 6630602
+[2021/03/29 19:03:05] [DemoController] HttpContext Transient 	9, 29422698
+[2021/03/29 19:03:08] [Startup] Trigger stop WebHost
+[2021/03/29 19:03:08] [Startup] ApplicationLifetime - Stopping
 ---
-[2021/03/29 15:38:44] [Startup] ApplicationLifetime - Stopped
-[2021/03/29 15:38:44] [Program] End
+[2021/03/29 19:03:13] [Startup] ApplicationLifetime - Stopped
+[2021/03/29 19:03:13] [Program] End
 ```
