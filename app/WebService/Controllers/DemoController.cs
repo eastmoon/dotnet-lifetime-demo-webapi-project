@@ -43,13 +43,13 @@ namespace WebService.Controllers
             // Show injection object
             Program.Output("[DemoController] Http Request : " + HttpContext.GetHashCode());
             Program.Output("[DemoController] Controller Singleton \t" + _singleton.Id + ", " + _singleton.GetHashCode());
-            Program.Output("[DemoController] Controller Scoped \t\t" + _scoped.Id + ", " + _scoped.GetHashCode());
+            Program.Output("[DemoController] Controller Scoped \t" + _scoped.Id + ", " + _scoped.GetHashCode());
             Program.Output("[DemoController] Controller Transient \t" + _transient.Id + ", " + _transient.GetHashCode());
-            Program.Output("[DemoController] Action Singleton \t\t" + actionSingleton.Id + ", " + actionSingleton.GetHashCode());
-            Program.Output("[DemoController] Action Scoped  \t\t\t" + actionScoped.Id + ", " + actionScoped.GetHashCode());
-            Program.Output("[DemoController] Action Transient \t\t" + actionTransient.Id + ", " + actionTransient.GetHashCode());
+            Program.Output("[DemoController] Action Singleton \t" + actionSingleton.Id + ", " + actionSingleton.GetHashCode());
+            Program.Output("[DemoController] Action Scoped  \t\t" + actionScoped.Id + ", " + actionScoped.GetHashCode());
+            Program.Output("[DemoController] Action Transient \t" + actionTransient.Id + ", " + actionTransient.GetHashCode());
             Program.Output("[DemoController] HttpContext Singleton \t" + retrieveSingleton.Id + ", " + retrieveSingleton.GetHashCode());
-            Program.Output("[DemoController] HttpContext Scoped  \t\t" + retrieveScoped.Id + ", " + retrieveScoped.GetHashCode());
+            Program.Output("[DemoController] HttpContext Scoped  \t" + retrieveScoped.Id + ", " + retrieveScoped.GetHashCode());
             Program.Output("[DemoController] HttpContext Transient \t" + retrieveTransient.Id + ", " + retrieveTransient.GetHashCode());
 
             // Process DemoService 
