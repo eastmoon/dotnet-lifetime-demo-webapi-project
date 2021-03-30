@@ -10,6 +10,7 @@ namespace WebService.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Infrastructure.Filters.CustomAuthorizationFilter]
     [Infrastructure.ApplicationModels.CustomControllerModelConvention("Custom Controller Description")]
     public class DemoController : ControllerBase
     {
@@ -34,6 +35,7 @@ namespace WebService.Controllers
 
         [HttpGet]
         [Infrastructure.ApplicationModels.CustomActionModelConvention("Custom Action Description")]
+        [Infrastructure.Filters.CustomActionFilter]
         public IEnumerable<DemoService> Get(
             [FromServices] IDISampleSingleton actionSingleton,
             [FromServices] IDISampleScoped actionScoped,

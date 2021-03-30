@@ -32,10 +32,15 @@ namespace WebService
         public void ConfigureServices(IServiceCollection services)
         {
             Program.Output("[Startup] ConfigureServices - Called");
-            // Initial WebAPI Controllers, and use options to setting global conventions.
+            // Initial WebAPI Controllers
             services.AddControllers( options =>
             {
+                // Register global conventions.
                 options.Conventions.Add(new Infrastructure.ApplicationModels.CustomApplicationModelConvention("Custom Application Description"));
+                // Register global filter
+                options.Filters.Add(new Infrastructure.Filters.CustomResultFilter());
+                options.Filters.Add(new Infrastructure.Filters.CustomExceptionFilter());
+                options.Filters.Add(new Infrastructure.Filters.CustomResourceFilter());
             });
 
             // Initial dependency injection relationship
