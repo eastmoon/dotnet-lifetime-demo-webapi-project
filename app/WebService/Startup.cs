@@ -62,6 +62,8 @@ namespace WebService
 
             app.UseAuthorization();
 
+            app.UseMiddleware<Infrastructure.Middleware.CustomMiddleware>();
+
             app.Use(async (context, next) =>
             {
                 Program.Output("[Middleware] Run async lambda middleware - request flow");
