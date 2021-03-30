@@ -13,6 +13,7 @@ namespace WebService.Infrastructure.Middleware
         public CustomMiddleware(RequestDelegate next)
         {
             _next = next;
+            Program.Output("[Middleware] Run custom middleware constructor - Called");
         }
 
         public async Task Invoke(HttpContext context)
