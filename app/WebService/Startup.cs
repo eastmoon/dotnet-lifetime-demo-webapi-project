@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
@@ -60,6 +61,13 @@ namespace WebService
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.Use(async (context, next) =>
+            {
+                Program.Output("[Middleware] Run async lambda middleware - request flow");
+                await next();
+                Program.Output("[Middleware] Run async lambda middleware - response flow");
+            });
 
             app.UseEndpoints(endpoints =>
             {
