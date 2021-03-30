@@ -72,6 +72,10 @@ namespace WebService
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapGet("/demo/hello", async context =>
+                {
+                    await context.Response.WriteAsync("Handled by UseEndpoints.Map routing.");
+                });
             });
 
             // For traced application lifetime
