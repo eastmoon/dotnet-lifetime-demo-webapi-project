@@ -1,4 +1,4 @@
-# dotnet-lifetime-demo-webapi-project
+# .NET Core WebAPI 生命週期範例專案
 
 此專案為 .NET Core 生命週期範例專案。
 
